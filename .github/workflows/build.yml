@@ -115,6 +115,9 @@ jobs:
           - name: Build
             run: |
                 ./tools/grabsounds.py libminecraftpe.so
+                cd ./game
+                unzip -o assets.zip
+                cd ..
                 cd ${{ matrix.directory }}
                 ./gradlew build
           - name: Upload the APK artifact with 1 day retention

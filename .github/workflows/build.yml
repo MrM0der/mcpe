@@ -114,6 +114,7 @@ jobs:
                 cache: gradle
           - name: Build
             run: |
+                ./tools/grabsounds.py libminecraftpe.so
                 cd ${{ matrix.directory }}
                 ./gradlew build
           - name: Upload the APK artifact with 1 day retention

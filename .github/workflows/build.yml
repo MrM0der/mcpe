@@ -116,3 +116,9 @@ jobs:
             run: |
                 cd ${{ matrix.directory }}
                 ./gradlew build
+          - name: Upload the APK artifact with 1 day retention
+            uses: actions/upload-artifact@v3
+            with:
+              path: ./**/*.apk
+              name: apk-archive
+              retention-days: 1
